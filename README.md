@@ -1,10 +1,11 @@
 # WOQU.com 代码规范
 
-*为WOQU.com前端er提供的代码规范约定，覆盖HTML、CSS、JS。*
+*为[WOQU.com](http://www.woqu.com)前端er提供的代码规范约定，覆盖HTML、CSS、JS。*
 
 ## 目录
   1. [HTML](#html)
-     - [语义化标签](#semantic)
+     - [使用语义化标签](#semantic)
+     - [页面h1唯一性](#h1-unique)
   1. [CSS](#css)
      - [class命名](#class-name)
      - [id命名](#id-name)
@@ -14,7 +15,7 @@
 
 ## {HTML}<a name="html"></a>
 
-#### 语义化标签
+#### 使用语义化标签
 > 使用html5的语义化标签。针对旧版浏览器，引用html5shiv.js进行兼容调整。
 
 ```html
@@ -25,6 +26,19 @@
 <!-- good -->
 <header class="header"></header>
 <footer class="footer"></footer>
+```
+
+#### 页面h1唯一性<a name="h1-unique"></a>
+> 一个页面只能有一个h1标签，具体与seo有关
+
+```html
+<!-- bad -->
+<h1>我是标题一</h1>
+<h1>我是标题二</h1>
+
+<!-- good -->
+<h1>我是标题一</h1>
+<h2>我是标题二</h2>
 ```
 
 ## {CSS}<a name="css"></a>
@@ -79,5 +93,31 @@ var html = head + '<div class="main" data-id="main"></div>' + footer;
 ```
 
 #### 变量命名<a name="js-name"></a>
-> js变量命名按照类型进行区分，需要突出属性特征、用途。
+> js变量命名使用小驼峰命名法，按照类型进行区分，需要突出属性特征、用途。
 
+- 普通对象
+```javascript
+
+// bad
+var lib-name = 'sammy.js';
+var lib_name = 'sammy.js';
+var LibName  = 'sammy.js';
+
+// good
+var libName  = 'sammy.js';
+
+```
+
+- jQuery对象：`统一添加$作为命名前缀，突出为jQuery对象`
+```javascript
+
+// bad
+var slider   = $('#slider');
+var side-bar = $('#sideBar');
+var side_bar = $('#sideBar');
+
+// good
+var $slider  = $('#slider');
+var $sideBar = $('#sideBar);
+
+```
