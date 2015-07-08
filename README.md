@@ -96,8 +96,8 @@ var html = head + '<div class="main" data-id="main"></div>' + footer;
 > js变量命名使用小驼峰命名法，按照类型进行区分，需要突出属性特征、用途。
 
 - 普通对象
-```javascript
 
+```javascript
 // bad
 var lib-name = 'sammy.js';
 var lib_name = 'sammy.js';
@@ -105,12 +105,11 @@ var LibName  = 'sammy.js';
 
 // good
 var libName  = 'sammy.js';
-
 ```
 
 - jQuery对象：`统一添加 $ 作为命名前缀，突出为jQuery对象`
-```javascript
 
+```javascript
 // bad
 var slider   = $('#slider');
 var side-bar = $('#sideBar');
@@ -118,29 +117,26 @@ var side_bar = $('#sideBar');
 
 // good
 var $slider  = $('#slider');
-var $sideBar = $('#sideBar);
-
+var $sideBar = $('#sideBar');
 ```
 
 - 函数：`小驼峰写法，中间无中横线或者下横线`
-```javascript
 
+```javascript
 // bad
 function get_name() {}
 function get-name() {}
 
 // good
 function getName() {}
-
 ```
 
 - 类：`首字母需要大写，驼峰写法`
-```javascript
 
+```javascript
 // bad
 function superClass() {}
 
 // good
 function SuperClass() {}
-
 ```
