@@ -3,10 +3,10 @@
 *为WOQU.com前端er提供的代码规范约定，覆盖HTML、CSS、JS。*
 
 ## 目录
-  1. [HTML](#HTML)
-     - [Semantic](#Semantic)
-  1. [CSS](#CSS)
-  1. [JAVASCRIPT](#JAVASCRIPT)
+  1. [HTML](#html)
+     - [Semantic](#semantic)
+  1. [CSS](#css)
+  1. [JAVASCRIPT](#javascript)
 
 ## HTML
 
