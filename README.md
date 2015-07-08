@@ -3,7 +3,7 @@
 *为 [WOQU.com](http://www.woqu.com) 前端er提供的代码规范约定，覆盖HTML、CSS、JS。*
 
 ## 目录
-  1. [HTML](#html)
+  1. [HTML](#html) 
      - [使用语义化标签](#semantic)
      - [页面h1唯一性](#h1-unique)
   1. [CSS](#css)
