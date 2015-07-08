@@ -5,21 +5,23 @@
 ## 目录
   1. [HTML](#{HTML})
      - [Semantic](#Semantic)
-     
-     > Semantic即语义化
-    ```html
-    //bad
-    <div class="header"></div>
-    <div class="footer"></div>
-    
-    //good
-    <header class="header"></header>
-    <footer class="footer"></footer>
-    ```
   1. [CSS](#CSS)
   1. [JAVASCRIPT](#JAVASCRIPT)
 
 ## {HTML}
+
+#### [Semantic](#Semantic)
+
+> Semantic即语义化，使用html5新增的语义化标签。
+
+```html
+//bad
+<div class="header"></div>
+<div class="footer"></div>
+//good
+<header class="header"></header>
+<footer class="footer"></footer>
+```
 
 ## {CSS}
 
