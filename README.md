@@ -1,6 +1,6 @@
 # WOQU.com 代码规范
 
-*为[WOQU.com](http://www.woqu.com)前端er提供的代码规范约定，覆盖HTML、CSS、JS。*
+*为 [WOQU.com](http://www.woqu.com) 前端er提供的代码规范约定，覆盖HTML、CSS、JS。*
 
 ## 目录
   1. [HTML](#html)
@@ -108,7 +108,7 @@ var libName  = 'sammy.js';
 
 ```
 
-- jQuery对象：`统一添加$作为命名前缀，突出为jQuery对象`
+- jQuery对象：`统一添加 $ 作为命名前缀，突出为jQuery对象`
 ```javascript
 
 // bad
