@@ -121,3 +121,26 @@ var $slider  = $('#slider');
 var $sideBar = $('#sideBar);
 
 ```
+
+- 函数：`小驼峰写法，中间无中横线或者下横线`
+```javascript
+
+// bad
+function get_name() {}
+function get-name() {}
+
+// good
+function getName() {}
+
+```
+
+- 类：`首字母需要大写，驼峰写法`
+```javascript
+
+// bad
+function superClass() {}
+
+// good
+function SuperClass() {}
+
+```
