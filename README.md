@@ -15,7 +15,7 @@
 
 ## {HTML}<a name="html"></a>
 
-#### 使用语义化标签
+#### 使用语义化标签<a name="semantic"></a>
 > 使用html5的语义化标签。针对旧版浏览器，引用html5shiv.js进行兼容调整。
 
 ```html
