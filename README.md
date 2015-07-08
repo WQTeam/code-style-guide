@@ -18,11 +18,11 @@
 > 使用html5的语义化标签。针对旧版浏览器，引用html5shiv.js进行兼容调整。
 
 ```html
-//bad
+<!-- bad -->
 <div class="header"></div>
 <div class="footer"></div>
 
-//good
+<!-- good -->
 <header class="header"></header>
 <footer class="footer"></footer>
 ```
@@ -33,12 +33,12 @@
 > 全小写，使用中横线分割。单词间使用下横线。
 
 ```css
-//bad
+/* bad */
 .header_left      { xxx }
 .headerLeft       { xxx }
 .HeaderLeft       { xxx }
 
-//good
+/* good */
 .header-left      { xxx }
 .usa-main         { xxx }
 .new_zealand-main { xxx }
@@ -48,13 +48,13 @@
 > 小驼峰写法，中间无中横线或者下横线。
 
 ```css
-//bad
+/* bad */
 #Logo             { xxx }
 #header_logo      { xxx }
 #header-logo      { xxx }
 #HeaderLogo       { xxx }
 
-//good
+/* good */
 #logo             { xxx }
 #headerLogo       { xxx }
 #headerLogoWrap   { xxx }
@@ -68,11 +68,11 @@
 
 ```javascript
 
-//bad
+// bad
 var param = "string";
 var html = head + "<div class='main' data-id='main'></div>" + footer;
 
-//good
+// good
 var param = 'string';
 var html = head + '<div class="main" data-id="main"></div>' + footer;
 
