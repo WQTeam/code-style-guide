@@ -131,7 +131,7 @@ function get-name() {}
 function getName() {}
 ```
 
-- 类：`首字母需要大写，驼峰写法`
+- 类(构造函数声明)：`首字母需要大写，驼峰写法`
 
 ```javascript
 // bad
