@@ -12,6 +12,7 @@
   1. [JAVASCRIPT](#javascript)
      - [引号](#quotation)
      - [变量命名](#js-name)
+     - [缩进](#indentation)
 
 ## {HTML}<a name="html"></a>
 
@@ -140,3 +141,6 @@ function superClass() {}
 // good
 function SuperClass() {}
 ```
+
+#### 缩进<a name="indentation"></a>
+> `空格`与`tap`不能混用。如果使用`空格`，四个`空格`代替一个缩进的位置。如果使用`tap`，一次代替一个缩进的位置。
