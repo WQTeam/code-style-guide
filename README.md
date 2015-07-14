@@ -10,9 +10,11 @@
      - [class命名](#class-name)
      - [id命名](#id-name)
   1. [JAVASCRIPT](#javascript)
+     - [使用严格模式](#use-strict)
      - [引号](#quotation)
      - [变量命名](#js-name)
      - [缩进](#indentation)
+
 
 ## {HTML}<a name="html"></a>
 
@@ -77,6 +79,19 @@
 ```
 
 ## {JAVASCRIPT}<a name="javascript"></a>
+
+#### 使用严格模式<a name="use-strict"></a>
+> 在代码中使用严格模式`'use strict';`，详细参考[javascript严格模式详解](#http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html)
+
+```javascript
+
+'use strict';
+
+arr1 = new Array();          // Error
+
+var arr2 = new Array();      // Success
+
+```
 
 #### 引号<a name="quotation"></a>
 > js全部使用单引号`''`，拼html模板内使用双引号`""`。
