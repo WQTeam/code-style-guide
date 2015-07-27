@@ -12,6 +12,7 @@
   1. [JAVASCRIPT](#javascript)
      - [使用严格模式](#use-strict)
      - [引号](#quotation)
+     - [行末分号](#semicolon)
      - [变量命名](#js-name)
      - [缩进](#indentation)
 
@@ -105,6 +106,21 @@ var html = head + "<div class='main' data-id='main'></div>" + footer;
 // good
 var param = 'string';
 var html = head + '<div class="main" data-id="main"></div>' + footer;
+
+```
+
+#### 行末分号<a name="semicolon"></a>
+> 虽然js行末的分号不是必须的，但是为了统一，以及避免打包压缩带来的不可预测问题，每行末的分号不可以省略。
+
+```javascript
+
+// bad
+var html = head + "<div class='main' data-id='main'></div>" + footer
+alert(html)
+
+// good
+var html = head + '<div class="main" data-id="main"></div>' + footer;
+alert(html);
 
 ```
 
