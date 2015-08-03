@@ -53,23 +53,20 @@
 
 > 常见内联元素：span、a、i、input、label、img等
 
-```html
-<!--
-  ** 常见嵌套 **
--->
+- 常见嵌套
 
+```html
 <!-- right：块级元素可以内嵌其他块级元素或者内联元素 -->
 <div><h1><span></span></h1></div>
 
 <!-- right：内联元素可以内嵌其他内联元素 -->
 <a href=""><span></span></a>
+```
 
 
 
-<!--
-  ** 错误嵌套 **
--->
-
+- 错误嵌套
+```html
 <!-- wrong：内联元素不能嵌套其他块级元素 -->
 <span><div></div></span>
 
@@ -83,14 +80,12 @@
 
 <!-- wrong：a标签不能内嵌a标签，这个错误会经常发生，值得重视 -->
 <a href="a.html"><a href="a.html"></a></a>
+```
 
 
-
-<!--
-  ** 回退 **
--->
-
-<!-- 内联元素内嵌块级元素 -->
+- 回退
+```html
+<!-- right：内联元素内嵌块级元素 -->
 <a style="display: block;" href=""><div></div></a>
 ```
 
