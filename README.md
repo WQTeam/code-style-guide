@@ -5,11 +5,14 @@
 ## 目录
   1. [HTML](#html)
      - [使用语义化标签](#semantic)
-     - [页面h1唯一性](#h1-unique)
+     - [编码](#html-encode)
+     - [title的声明](#html-title)
+     - [页面&lt;h1&gt;标签唯一性](#h1-unique)
      - [标签嵌套规则](#nested-rule)
   1. [CSS](#css)
      - [class命名](#class-name)
      - [id命名](#id-name)
+     - [禁止使用无样式class来hook脚本](#class-hook-js)
   1. [JAVASCRIPT](#javascript)
      - [使用严格模式](#use-strict)
      - [引号](#quotation)
@@ -26,15 +29,54 @@
 ```html
 <!-- bad -->
 <div class="header"></div>
+<div class="nav"></div>
+<div class="section"></div>
+<div class="article"></div>
 <div class="footer"></div>
 
 <!-- good -->
 <header class="header"></header>
+<nav class="nav"></nav>
+<section class="content-section"></section>
+<article class="article"></article>
 <footer class="footer"></footer>
 ```
 
-#### 页面h1唯一性<a name="h1-unique"></a>
-> 一个页面只能有一个h1标签，具体与seo有关
+#### 编码<a name="html-encode"></a>
+> 使用`utf-8`编码方式，指定字符编码的`meta`必须是`head`的第一个子元素，[原因详解](http://www.qianduan.net/html5-charset-can-it/)。
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        ...
+    </hed>
+    <body>
+        ...
+    </body>
+</html>
+```
+
+#### title的声明<a name="html-title"></a>
+> `title`必须作为`head`的直接子元素，并紧随`charset`声明之后。`title`中如果包含`ascii`之外的字符，浏览器需要知道字符编码类型才能进行解码，否则可能导致乱码。
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>我趣旅行</title>
+        ...
+    </hed>
+    <body>
+        ...
+    </body>
+</html>
+```
+
+#### 页面&lt;h1&gt;标签唯一性<a name="h1-unique"></a>
+> 一个页面只能有一个h1标签，具体与seo有关。
 
 ```html
 <!-- bad -->
@@ -44,14 +86,16 @@
 <!-- good -->
 <h1>我是标题一</h1>
 <h2>我是标题二</h2>
+...
+<h6>我是标题六</h6>
 ```
 
 #### 标签嵌套规则<a name="nested-rule"></a>
-> html标签包含块级元素、内联元素，元素的类型决定嵌套的规则
+> html标签包含块级元素、内联元素，元素的类型决定嵌套的规则。
 
-> 常见块元素：div、section、ul、li、p、h1~h6等
+> 常见块元素：div、section、ul、li、p、h1~h6等。
 
-> 常见内联元素：span、a、i、input、label、img等
+> 常见内联元素：span、a、i、input、label、img等。
 
 - 常见嵌套
 
@@ -66,6 +110,7 @@
 
 
 - 错误嵌套
+
 ```html
 <!-- wrong：内联元素不能嵌套其他块级元素 -->
 <span><div></div></span>
@@ -73,9 +118,7 @@
 <!-- wrong：p元素不能内嵌块级元素，类似元素有h1、h2、h3、h4、h5、h6、p、dt -->
 <p><div></div></p>
 <h1><div></div></h1>
-         .
-         .
-         .  
+...
 <h6><div></div></h6>
 
 <!-- wrong：a标签不能内嵌a标签，这个错误会经常发生，值得重视 -->
@@ -84,6 +127,7 @@
 
 
 - 回退
+
 ```html
 <!-- right：内联元素内嵌块级元素 -->
 <a style="display: block;" href=""><div></div></a>
@@ -121,13 +165,26 @@
 #logo             { xxx }
 #headerLogo       { xxx }
 #headerLogoWrap   { xxx }
+```
 
+#### 禁止使用无样式class来hook脚本<a name="class-hook-js"></a>
+> 禁止为元素定义无样式的class，而作为调用脚本使用。这样会造成页面class定义冗余以及增加维护难度。请使用元素自带属性或自定义属性实现。
+
+```css
+// bad
+<div class="click-alert"></div>
+$('.click-alert').click(function() {});
+
+// good
+<div data-action="clickAlert"></div>
+$('div[data-action="clickAlert"]').click(function() {});
 ```
 
 ## {JAVASCRIPT}<a name="javascript"></a>
 
 #### 使用严格模式<a name="use-strict"></a>
-> 在代码中使用严格模式`'use strict';`，详细参考[javascript严格模式详解](http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html)
+-->
+> 在代码中使用严格模式`'use strict';`，详细参考[javascript严格模式详解](http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html)。
 
 ```javascript
 
