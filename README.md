@@ -132,7 +132,7 @@
 ## {JAVASCRIPT}<a name="javascript"></a>
 
 #### 使用严格模式<a name="use-strict"></a>
-> 在代码中使用严格模式`'use strict';`，详细参考[javascript严格模式详解](#http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html)
+> 在代码中使用严格模式`'use strict';`，详细参考[javascript严格模式详解](http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html)
 
 ```javascript
 
