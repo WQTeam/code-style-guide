@@ -6,6 +6,7 @@
   1. [HTML](#html)
      - [使用语义化标签](#semantic)
      - [页面h1唯一性](#h1-unique)
+     - [标签嵌套规则](#nested-rule)
   1. [CSS](#css)
      - [class命名](#class-name)
      - [id命名](#id-name)
@@ -44,6 +45,35 @@
 <h1>我是标题一</h1>
 <h2>我是标题二</h2>
 ```
+
+#### 标签嵌套规则<a name="nested-rule"></a>
+> html标签包含块级元素、内联元素，元素的类型决定嵌套的规则
+
+> 常见块元素：div、section、ul、li、p、h1~h6等
+
+> 常见内联元素：span、a、i、input、label、img等
+
+```html
+<!-- 常见嵌套 -->
+<!-- right：块级元素可以内嵌其他块级元素或者内联元素 -->
+<div><h1><span></span></h1></div>
+<!-- right：内联元素可以内嵌其他内联元素 -->
+<a href=""><span></span></a>
+
+
+
+<!-- 错误嵌套 -->
+<!-- wrong：内联元素不能嵌套其他块级元素 -->
+<span><div></div></span>
+<!-- wrong：p元素不能内嵌块级元素，类似元素有h1、h2、h3、h4、h5、h6、p、dt -->
+<p><div></div></p>
+<h1><div></div></h1>
+         .
+         .
+         .  
+<h6><div></div></h6>
+```
+
 
 ## {CSS}<a name="css"></a>
 
