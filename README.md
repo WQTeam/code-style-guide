@@ -276,7 +276,7 @@ function superClass() {}
 function SuperClass() {}
 ```
 
-- 缩写词需要准备表明意义
+- 缩写词需要准确表明意义
 
 ```javascript
 // bad
