@@ -15,6 +15,7 @@
      - [禁止使用无样式class来hook脚本](#class-hook-js)
   1. [JAVASCRIPT](#javascript)
      - [使用严格模式](#use-strict)
+     - [避免全局变量](#avoid-global-variable)
      - [引号](#quotation)
      - [行末分号](#semicolon)
      - [变量命名](#js-name)
@@ -227,7 +228,7 @@ alert(html);
 ```
 
 #### 变量命名<a name="js-name"></a>
-> js变量命名使用小驼峰命名法，按照类型进行区分，需要突出属性特征、用途。
+> js变量命名使用小驼峰命名法，按照类型进行区分，需要突出属性特征、用途，不要使用不能清晰表达愿意的缩略词。
 
 - 普通对象
 
@@ -273,6 +274,16 @@ function superClass() {}
 
 // good
 function SuperClass() {}
+```
+
+- 缩写词需要准备表明意义
+
+```javascript
+// bad
+var comm = document.getElementById('#comment');
+
+// good
+var comment = document.getElementById('#comment');
 ```
 
 #### 缩进<a name="indentation"></a>
