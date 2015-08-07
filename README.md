@@ -215,6 +215,8 @@ var html = head + '<div class="main" data-id="main"></div>' + footer;
 #### 行末分号<a name="semicolon"></a>
 > 虽然js行末的分号不是必须的，但是为了代码风格统一，以及避免打包压缩带来的不可预测问题（真正会导致上下行解析出问题的token有5个：括号，方括号，正则开头的斜杠，加号，减号。一行开头是括号或者方括号的时候不添加分号会报错。），每行末的分号不可以省略。
 
+> js分号工具[semi](https://github.com/yyx990803/semi)
+
 ```javascript
 
 // bad
