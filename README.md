@@ -223,6 +223,13 @@ var html = head + '<div class="main" data-id="main"></div>' + footer;
 var html = head + "<div class='main' data-id='main'></div>" + footer
 alert(html)
 
+// error
+var num = 1
+(function() {
+    console.log(num)
+})
+var str = 'error message'
+
 // good
 var html = head + '<div class="main" data-id="main"></div>' + footer;
 alert(html);
