@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Code-style-guide : WOUQ.com前端代码规范">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Code-style-guide</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/WQTeam/code-style-guide">View on GitHub</a>
+
+          <h1 id="project_title">Code-style-guide</h1>
+          <h2 id="project_tagline">WOUQ.com前端代码规范</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/WQTeam/code-style-guide/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/WQTeam/code-style-guide/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="woqucom-代码规范" class="anchor" href="#woqucom-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>WOQU.com 代码规范</h1>
+
+<p><em>为 <a href="http://www.woqu.com">WOQU.com</a> 前端er提供的代码规范约定，覆盖HTML、CSS、JS。</em></p>
+
+<h2>
+<a id="目录" class="anchor" href="#%E7%9B%AE%E5%BD%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>目录</h2>
+
+<ol>
+<li>
+<a href="#html">HTML</a>
+
+<ul>
+<li><a href="#semantic">使用语义化标签</a></li>
+<li><a href="#html-encode">编码</a></li>
+<li><a href="#html-title">title的声明</a></li>
+<li><a href="#h1-unique">页面&lt;h1&gt;标签唯一性</a></li>
+<li><a href="#nested-rule">标签嵌套规则</a></li>
+</ul>
+</li>
+<li>
+<a href="#css">CSS</a>
+
+<ul>
+<li><a href="#class-name">class命名</a></li>
+<li><a href="#id-name">id命名</a></li>
+<li><a href="#class-hook-js">禁止使用无样式class来hook脚本</a></li>
+</ul>
+</li>
+<li>
+<a href="#javascript">JAVASCRIPT</a>
+
+<ul>
+<li><a href="#use-strict">使用严格模式</a></li>
+<li><a href="#avoid-global-variable">避免全局变量</a></li>
+<li><a href="#quotation">引号</a></li>
+<li><a href="#semicolon">行末分号</a></li>
+<li><a href="#js-name">变量命名</a></li>
+<li><a href="#indentation">缩进</a></li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="html" class="anchor" href="#html" aria-hidden="true"><span class="octicon octicon-link"></span></a>{HTML}<a name="html"></a>
+</h2>
+
+<h4>
+<a id="使用语义化标签" class="anchor" href="#%E4%BD%BF%E7%94%A8%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用语义化标签<a name="semantic"></a>
+</h4>
+
+<blockquote>
+<p>使用html5的语义化标签。针对旧版浏览器，引用html5shiv.js进行兼容调整。</p>
+</blockquote>
+
+<div class="highlight highlight-html"><pre><span class="pl-c">&lt;!-- bad --&gt;</span>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>header<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>section<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>article<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>footer<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+
+<span class="pl-c">&lt;!-- good --&gt;</span>
+&lt;<span class="pl-ent">header</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>header<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">header</span>&gt;
+&lt;<span class="pl-ent">nav</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">nav</span>&gt;
+&lt;<span class="pl-ent">section</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>content-section<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">section</span>&gt;
+&lt;<span class="pl-ent">article</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>article<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">article</span>&gt;
+&lt;<span class="pl-ent">footer</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>footer<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">footer</span>&gt;</pre></div>
+
+<h4>
+<a id="编码" class="anchor" href="#%E7%BC%96%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>编码<a name="html-encode"></a>
+</h4>
+
+<blockquote>
+<p>使用<code>utf-8</code>编码方式，指定字符编码的<code>meta</code>必须是<code>head</code>的第一个子元素，<a href="http://www.qianduan.net/html5-charset-can-it/">原因详解</a>。</p>
+</blockquote>
+
+<div class="highlight highlight-html"><pre>&lt;!DOCTYPE html&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+    &lt;<span class="pl-ent">head</span>&gt;
+        &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>&gt;
+        ...
+    &lt;/<span class="pl-ent">hed</span>&gt;
+    &lt;<span class="pl-ent">body</span>&gt;
+        ...
+    &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+
+<h4>
+<a id="title的声明" class="anchor" href="#title%E7%9A%84%E5%A3%B0%E6%98%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>title的声明<a name="html-title"></a>
+</h4>
+
+<blockquote>
+<p><code>title</code>必须作为<code>head</code>的直接子元素，并紧随<code>charset</code>声明之后。<code>title</code>中如果包含<code>ascii</code>之外的字符，浏览器需要知道字符编码类型才能进行解码，否则可能导致乱码。</p>
+</blockquote>
+
+<div class="highlight highlight-html"><pre>&lt;!DOCTYPE html&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+    &lt;<span class="pl-ent">head</span>&gt;
+        &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;我趣旅行&lt;/<span class="pl-ent">title</span>&gt;
+        ...
+    &lt;/<span class="pl-ent">hed</span>&gt;
+    &lt;<span class="pl-ent">body</span>&gt;
+        ...
+    &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+
+<h4>
+<a id="页面h1标签唯一性" class="anchor" href="#%E9%A1%B5%E9%9D%A2h1%E6%A0%87%E7%AD%BE%E5%94%AF%E4%B8%80%E6%80%A7" aria-hidden="true"><span class="octicon octicon-link"></span></a>页面&lt;h1&gt;标签唯一性<a name="h1-unique"></a>
+</h4>
+
+<blockquote>
+<p>一个页面只能有一个h1标签，具体与seo有关。</p>
+</blockquote>
+
+<div class="highlight highlight-html"><pre><span class="pl-c">&lt;!-- bad --&gt;</span>
+&lt;<span class="pl-ent">h1</span>&gt;我是标题一&lt;/<span class="pl-ent">h1</span>&gt;
+&lt;<span class="pl-ent">h1</span>&gt;我是标题二&lt;/<span class="pl-ent">h1</span>&gt;
+
+<span class="pl-c">&lt;!-- good --&gt;</span>
+&lt;<span class="pl-ent">h1</span>&gt;我是标题一&lt;/<span class="pl-ent">h1</span>&gt;
+&lt;<span class="pl-ent">h2</span>&gt;我是标题二&lt;/<span class="pl-ent">h2</span>&gt;
+...
+&lt;<span class="pl-ent">h6</span>&gt;我是标题六&lt;/<span class="pl-ent">h6</span>&gt;</pre></div>
+
+<h4>
+<a id="标签嵌套规则" class="anchor" href="#%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>标签嵌套规则<a name="nested-rule"></a>
+</h4>
+
+<blockquote>
+<p>html标签包含块级元素、内联元素，元素的类型决定嵌套的规则。</p>
+
+<p>常见块元素：div、section、ul、li、p、h1~h6等。</p>
+
+<p>常见内联元素：span、a、i、input、label、img等。</p>
+</blockquote>
+
+<ul>
+<li>常见嵌套</li>
+</ul>
+
+<div class="highlight highlight-html"><pre><span class="pl-c">&lt;!-- right：块级元素可以内嵌其他块级元素或者内联元素 --&gt;</span>
+&lt;<span class="pl-ent">div</span>&gt;&lt;<span class="pl-ent">h1</span>&gt;&lt;<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">h1</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+
+<span class="pl-c">&lt;!-- right：内联元素可以内嵌其他内联元素 --&gt;</span>
+&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<ul>
+<li>错误嵌套</li>
+</ul>
+
+<div class="highlight highlight-html"><pre><span class="pl-c">&lt;!-- wrong：内联元素不能嵌套其他块级元素 --&gt;</span>
+&lt;<span class="pl-ent">span</span>&gt;&lt;<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+
+<span class="pl-c">&lt;!-- wrong：p元素不能内嵌块级元素，类似元素有h1、h2、h3、h4、h5、h6、p、dt --&gt;</span>
+&lt;<span class="pl-ent">p</span>&gt;&lt;<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">p</span>&gt;
+&lt;<span class="pl-ent">h1</span>&gt;&lt;<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">h1</span>&gt;
+...
+&lt;<span class="pl-ent">h6</span>&gt;&lt;<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">h6</span>&gt;
+
+<span class="pl-c">&lt;!-- wrong：a标签不能内嵌a标签，这个错误会经常发生，值得重视 --&gt;</span>
+&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>a.html<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>a.html<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<ul>
+<li>回退</li>
+</ul>
+
+<div class="highlight highlight-html"><pre><span class="pl-c">&lt;!-- right：内联元素内嵌块级元素 --&gt;</span>
+&lt;<span class="pl-ent">a</span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span>display: block;<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<h2>
+<a id="css" class="anchor" href="#css" aria-hidden="true"><span class="octicon octicon-link"></span></a>{CSS}<a name="css"></a>
+</h2>
+
+<h4>
+<a id="class命名" class="anchor" href="#class%E5%91%BD%E5%90%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>class命名<a name="class-name"></a>
+</h4>
+
+<blockquote>
+<p>全小写，使用中横线分割。单词间使用下横线。</p>
+</blockquote>
+
+<div class="highlight highlight-css"><pre><span class="pl-c">/* bad */</span>
+<span class="pl-e">.header_left</span>      { <span class="pl-c1">xxx</span> }
+<span class="pl-e">.headerLeft</span>       { <span class="pl-c1">xxx</span> }
+<span class="pl-e">.HeaderLeft</span>       { <span class="pl-c1">xxx</span> }
+
+<span class="pl-c">/* good */</span>
+<span class="pl-e">.header-left</span>      { <span class="pl-c1">xxx</span> }
+<span class="pl-e">.usa-main</span>         { <span class="pl-c1">xxx</span> }
+<span class="pl-e">.new_zealand-main</span> { <span class="pl-c1">xxx</span> }</pre></div>
+
+<h4>
+<a id="id命名" class="anchor" href="#id%E5%91%BD%E5%90%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>id命名<a name="id-name"></a>
+</h4>
+
+<blockquote>
+<p>小驼峰写法，中间无中横线或者下横线。</p>
+</blockquote>
+
+<div class="highlight highlight-css"><pre><span class="pl-c">/* bad */</span>
+<span class="pl-e">#Logo</span>             { <span class="pl-c1">xxx</span> }
+<span class="pl-e">#header_logo</span>      { <span class="pl-c1">xxx</span> }
+<span class="pl-e">#header-logo</span>      { <span class="pl-c1">xxx</span> }
+<span class="pl-e">#HeaderLogo</span>       { <span class="pl-c1">xxx</span> }
+
+<span class="pl-c">/* good */</span>
+<span class="pl-e">#logo</span>             { <span class="pl-c1">xxx</span> }
+<span class="pl-e">#headerLogo</span>       { <span class="pl-c1">xxx</span> }
+<span class="pl-e">#headerLogoWrap</span>   { <span class="pl-c1">xxx</span> }</pre></div>
+
+<h4>
+<a id="禁止使用无样式class来hook脚本" class="anchor" href="#%E7%A6%81%E6%AD%A2%E4%BD%BF%E7%94%A8%E6%97%A0%E6%A0%B7%E5%BC%8Fclass%E6%9D%A5hook%E8%84%9A%E6%9C%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>禁止使用无样式class来hook脚本<a name="class-hook-js"></a>
+</h4>
+
+<blockquote>
+<p>禁止为元素定义无样式的class，而作为调用脚本使用。这样会造成页面class定义冗余以及增加维护难度。请使用元素自带属性或自定义属性实现。</p>
+</blockquote>
+
+<div class="highlight highlight-css"><pre>// bad
+&lt;<span class="pl-ent">div</span> class="click-alert"&gt;&lt;/<span class="pl-ent">div</span>&gt;
+$('<span class="pl-e">.click-alert</span>')<span class="pl-e">.click</span>(function() {});
+
+// good
+&lt;<span class="pl-ent">div</span> data-action="clickAlert"&gt;&lt;/<span class="pl-ent">div</span>&gt;
+$('<span class="pl-ent">div</span>[data-action="clickAlert"]')<span class="pl-e">.click</span>(function() {});</pre></div>
+
+<h2>
+<a id="javascript" class="anchor" href="#javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>{JAVASCRIPT}<a name="javascript"></a>
+</h2>
+
+<h4>
+<a id="使用严格模式" class="anchor" href="#%E4%BD%BF%E7%94%A8%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用严格模式<a name="use-strict"></a>
+</h4>
+
+<blockquote>
+<p>在代码中使用严格模式<code>'use strict';</code>，详细参考<a href="http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html">javascript严格模式详解</a>。</p>
+</blockquote>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+arr1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Array</span>();          <span class="pl-c">// Error</span>
+
+<span class="pl-k">var</span> arr2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Array</span>();      <span class="pl-c">// Success</span>
+</pre></div>
+
+<h4>
+<a id="引号" class="anchor" href="#%E5%BC%95%E5%8F%B7" aria-hidden="true"><span class="octicon octicon-link"></span></a>引号<a name="quotation"></a>
+</h4>
+
+<blockquote>
+<p>js全部使用单引号<code>''</code>，拼html模板内使用双引号<code>""</code>。</p>
+</blockquote>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="pl-c">// bad</span>
+<span class="pl-k">var</span> param <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>string<span class="pl-pds">"</span></span>;
+<span class="pl-k">var</span> html <span class="pl-k">=</span> head <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>&lt;div class='main' data-id='main'&gt;&lt;/div&gt;<span class="pl-pds">"</span></span> <span class="pl-k">+</span> footer;
+
+<span class="pl-c">// good</span>
+<span class="pl-k">var</span> param <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>string<span class="pl-pds">'</span></span>;
+<span class="pl-k">var</span> html <span class="pl-k">=</span> head <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;div class="main" data-id="main"&gt;&lt;/div&gt;<span class="pl-pds">'</span></span> <span class="pl-k">+</span> footer;
+</pre></div>
+
+<h4>
+<a id="行末分号" class="anchor" href="#%E8%A1%8C%E6%9C%AB%E5%88%86%E5%8F%B7" aria-hidden="true"><span class="octicon octicon-link"></span></a>行末分号<a name="semicolon"></a>
+</h4>
+
+<blockquote>
+<p>虽然js行末的分号不是必须的，但是为了代码风格统一，以及避免打包压缩带来的不可预测问题（真正会导致上下行解析出问题的token有5个：括号，方括号，正则开头的斜杠，加号，减号。一行开头是括号或者方括号的时候不添加分号会报错。），每行末的分号不可以省略。</p>
+
+<p>js分号工具<a href="https://github.com/yyx990803/semi">semi</a></p>
+</blockquote>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="pl-c">// bad</span>
+<span class="pl-k">var</span> html <span class="pl-k">=</span> head <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>&lt;div class='main' data-id='main'&gt;&lt;/div&gt;<span class="pl-pds">"</span></span> <span class="pl-k">+</span> footer
+<span class="pl-c1">alert</span>(html)
+
+<span class="pl-c">// error</span>
+<span class="pl-k">var</span> num <span class="pl-k">=</span> <span class="pl-c1">1</span>
+(<span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(num)
+})
+<span class="pl-k">var</span> str <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>error message<span class="pl-pds">'</span></span>
+
+<span class="pl-c">// good</span>
+<span class="pl-k">var</span> html <span class="pl-k">=</span> head <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;div class="main" data-id="main"&gt;&lt;/div&gt;<span class="pl-pds">'</span></span> <span class="pl-k">+</span> footer;
+<span class="pl-c1">alert</span>(html);
+</pre></div>
+
+<h4>
+<a id="变量命名" class="anchor" href="#%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>变量命名<a name="js-name"></a>
+</h4>
+
+<blockquote>
+<p>js变量命名使用小驼峰命名法，按照类型进行区分，需要突出属性特征、用途，不要使用不能清晰表达意义的缩略词。</p>
+</blockquote>
+
+<ul>
+<li>普通对象</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">// bad</span>
+<span class="pl-k">var</span> lib<span class="pl-k">-</span>name <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>sammy.js<span class="pl-pds">'</span></span>;
+<span class="pl-k">var</span> lib_name <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>sammy.js<span class="pl-pds">'</span></span>;
+<span class="pl-k">var</span> LibName  <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>sammy.js<span class="pl-pds">'</span></span>;
+
+<span class="pl-c">// good</span>
+<span class="pl-k">var</span> libName  <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>sammy.js<span class="pl-pds">'</span></span>;</pre></div>
+
+<ul>
+<li>jQuery对象：<code>统一添加 $ 作为命名前缀，突出为jQuery对象</code>
+</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">// bad</span>
+<span class="pl-k">var</span> slider   <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>#slider<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> side<span class="pl-k">-</span>bar <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>#sideBar<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> side_bar <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>#sideBar<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// good</span>
+<span class="pl-k">var</span> $slider  <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>#slider<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> $sideBar <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>#sideBar<span class="pl-pds">'</span></span>);</pre></div>
+
+<ul>
+<li>函数：<code>小驼峰写法，中间无中横线或者下横线</code>
+</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">// bad</span>
+<span class="pl-k">function</span> <span class="pl-en">get_name</span>() {}
+<span class="pl-k">function</span> get<span class="pl-k">-</span><span class="pl-en">name</span>() {}
+
+<span class="pl-c">// good</span>
+<span class="pl-k">function</span> <span class="pl-en">getName</span>() {}</pre></div>
+
+<ul>
+<li>类(构造函数声明)：<code>首字母需要大写，驼峰写法</code>
+</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">// bad</span>
+<span class="pl-k">function</span> <span class="pl-en">superClass</span>() {}
+
+<span class="pl-c">// good</span>
+<span class="pl-k">function</span> <span class="pl-en">SuperClass</span>() {}</pre></div>
+
+<ul>
+<li>缩写词需要准确表明意义</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">// bad</span>
+<span class="pl-k">var</span> comm <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>#comment<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// good</span>
+<span class="pl-k">var</span> comment <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>#comment<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4>
+<a id="缩进" class="anchor" href="#%E7%BC%A9%E8%BF%9B" aria-hidden="true"><span class="octicon octicon-link"></span></a>缩进<a name="indentation"></a>
+</h4>
+
+<blockquote>
+<p><code>空格</code>与<code>tap</code>不能混用。如果使用<code>空格</code>，四个<code>空格</code>代替一个缩进的位置。如果使用<code>tap</code>，请设置一个<code>tap</code>代替四个<code>空格</code>的位置长度。</p>
+</blockquote>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Code-style-guide maintained by <a href="https://github.com/WQTeam">WQTeam</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
